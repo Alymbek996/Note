@@ -6,18 +6,16 @@ import com.example.noteapp.data.localdb.NoteDataBase
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class App:Application() {
+class App:Application(){
+
     companion object{
-        lateinit var roomDatabase:NoteDataBase
+        lateinit var database: NoteDataBase
     }
 
     override fun onCreate() {
         super.onCreate()
-        roomDatabase = Room.databaseBuilder(
-            applicationContext,
-            NoteDataBase::class.java,
-            "note_db"
-        ).allowMainThreadQueries()
+        database = Room.databaseBuilder(this, NoteDataBase::class.java,"database")
+            .allowMainThreadQueries()
             .build()
     }
 }

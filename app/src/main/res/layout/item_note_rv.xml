@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:padding="12dp"
+    android:backgroundTint="#2979FF"
+    app:cardCornerRadius="35dp"
+    android:layout_margin="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/noteTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:text="NoteTitle"
+        android:padding="16dp"
+
+        android:fontFamily="@font/tienne_black"
+        android:textColor="#FF3D00"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="text"
+        android:fontFamily="@font/modern_antiqua"
+        android:textAlignment="center"
+        android:textColor="#FF3D00"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteTitle" />
+
+
+
+
+</androidx.cardview.widget.CardView>

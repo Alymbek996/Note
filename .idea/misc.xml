@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NoteApp/app/src/main/res/drawable/gradient.xml" value="0.26205128205128203" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NoteApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NoteApp/app/src/main/res/layout/home_fragment.xml" value="0.18840579710144928" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NoteApp/app/src/main/res/layout/item_note_rv.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NoteApp/app/src/main/res/layout/note_fragment.xml" value="0.264" />
+      </map>
+    </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="dagger.hilt.android.HiltAndroidApp" />
+    </list>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

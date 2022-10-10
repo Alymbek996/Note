@@ -17,4 +17,5 @@ suspend fun edit(noteEntity: NoteEntity)
 
 @Delete
 suspend fun deleteNote(noteEntity: NoteEntity)
+
 }

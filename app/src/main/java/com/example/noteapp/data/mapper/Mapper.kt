@@ -9,9 +9,9 @@ fun Note.noteToNoteEntity()=NoteEntity(
     title = title
 )
 
-
 fun NoteEntity.noteEntityToNote()=Note(
     id=id,
     text=text,
-    title = title
+    title = title,
+
 )
