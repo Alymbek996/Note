@@ -58,7 +58,7 @@ class NoteAdapter(private val onClick:(position:Int)->Unit) :
         return list.size
     }
 
-    fun addItem(note: Unit) {
+    fun addItem(note: Note) {
         list.add(note)
         notifyItemInserted(0)
 
