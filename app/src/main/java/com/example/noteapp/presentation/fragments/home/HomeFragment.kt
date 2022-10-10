@@ -60,7 +60,7 @@ class HomeFragment : Fragment() {
 
             Log.e("notee", "text :${note.text } title: ${note.title}")
 
-         //   viewModel.getAllNotes()
+            viewModel.getAllNotes()
 
           viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED){
@@ -74,8 +74,7 @@ class HomeFragment : Fragment() {
                             Toast.makeText(requireContext(), it.error, Toast.LENGTH_SHORT).show()
                         }
                         is UIState.Success->{
-                            val list = viewModel.getAllNotes()
-                            noteAdapter.addItem(list)
+                            noteAdapter.addItems(it.data)
                         }
                     }
                     viewModel.createNote(Note(title = note.title, text = note.text))

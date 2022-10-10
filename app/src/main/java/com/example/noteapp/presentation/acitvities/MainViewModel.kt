@@ -36,16 +36,16 @@ class MainViewModel @Inject constructor(
     private val _deleteNoteState = MutableStateFlow<UIState<Unit>>(UIState.Loading())
     val deleteNoteState = _deleteNoteState.asStateFlow()
 
-     suspend fun getAllNotes(){
+      fun getAllNotes(){
         getNoteAllUseCase.getAllNote().collectFlow(_getAllNoteState)
     }
-     suspend fun createNote(note: Note){
+      fun createNote(note: Note){
         createNoteUseCase.createNote(note).collectFlow(_createNoteState)
     }
-     suspend fun editNote(note: Note){
+      fun editNote(note: Note){
         editNoteUseCase.editNote(note).collectFlow(_editNoteState)
     }
-     suspend fun deleteNote(note: Note){
+      fun deleteNote(note: Note){
         deleteNoteUseCase.deleteNote(note).collectFlow(_deleteNoteState)
     }
 }

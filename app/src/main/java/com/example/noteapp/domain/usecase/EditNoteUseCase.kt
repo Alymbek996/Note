@@ -9,6 +9,6 @@ class EditNoteUseCase @Inject constructor(
     private val noteRepository: NoteRepository
 ) {
 
-     suspend fun editNote(note: Note)=noteRepository.editNote(note)
+      fun editNote(note: Note)=noteRepository.editNote(note)
 
 }

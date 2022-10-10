@@ -6,8 +6,8 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface NoteRepository {
-   suspend fun createNote(note: Note):Flow<Resource<Unit>>
-   suspend fun editNote(note:Note):Flow<Resource<Unit>>
-  suspend  fun deleteNote(note:Note):Flow<Resource<Unit>>
-  suspend  fun getAll():Flow<Resource<List<Note>>>
+    fun createNote(note: Note):Flow<Resource<Unit>>
+    fun editNote(note:Note):Flow<Resource<Unit>>
+    fun deleteNote(note:Note):Flow<Resource<Unit>>
+    fun getAll():Flow<Resource<List<Note>>>
 }

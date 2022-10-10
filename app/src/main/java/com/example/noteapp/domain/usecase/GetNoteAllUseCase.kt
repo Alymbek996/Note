@@ -8,6 +8,6 @@ import javax.inject.Inject
     private val noteRepository: NoteRepository
     ) {
 
-       suspend fun getAllNote()=noteRepository.getAll()
+        fun getAllNote()=noteRepository.getAll()
 
 }

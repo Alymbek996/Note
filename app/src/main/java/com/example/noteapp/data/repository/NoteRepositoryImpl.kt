@@ -16,19 +16,19 @@ import javax.inject.Inject
  class NoteRepositoryImpl @Inject constructor(
     private val noteDao: NoteDao
     ) :NoteRepository,BaseRepository() {
-    override suspend fun createNote(note: Note): Flow<Resource<Unit>> = doRequest {
+    override  fun createNote(note: Note): Flow<Resource<Unit>> = doRequest {
         noteDao.createNote(note.noteToNoteEntity())
     }
 
-    override suspend fun editNote(note: Note): Flow<Resource<Unit>> = doRequest {
+    override  fun editNote(note: Note): Flow<Resource<Unit>> = doRequest {
         noteDao.edit(note.noteToNoteEntity())
     }
 
-    override suspend fun deleteNote(note: Note): Flow<Resource<Unit>> = doRequest {
+    override  fun deleteNote(note: Note): Flow<Resource<Unit>> = doRequest {
         noteDao.deleteNote(note.noteToNoteEntity())
     }
 
-    override suspend fun getAll(): Flow<Resource<List<Note>>> = doRequest {
+    override  fun getAll(): Flow<Resource<List<Note>>> = doRequest {
         noteDao.getAllNotes().map { it.noteEntityToNote() }
     }
     }

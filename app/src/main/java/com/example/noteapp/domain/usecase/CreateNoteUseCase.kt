@@ -8,6 +8,6 @@ import javax.inject.Inject
 class CreateNoteUseCase @Inject constructor(
     private val noteRepository: NoteRepository
 ) {
-     suspend fun createNote(note: Note)=noteRepository.createNote(note)
+      fun createNote(note: Note)=noteRepository.createNote(note)
 
 }
