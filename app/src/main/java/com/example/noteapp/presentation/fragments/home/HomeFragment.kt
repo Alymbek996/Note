@@ -83,6 +83,7 @@ class HomeFragment : BaseFragment() {
     }
     private fun onItemLongClick(position: Int) {
         val currentList = noteListAdapter.currentList.toMutableList()
+        val list = noteListAdapter.currentList.get(position)
         AlertDialog.Builder(view?.context).setTitle("Внимание!")
             .setMessage("Вы точно хотите удалить данный элемент?")
             .setNegativeButton("отмена",null)
@@ -90,7 +91,7 @@ class HomeFragment : BaseFragment() {
 
                 currentList.removeAt(position)
                 noteListAdapter.submitList(currentList)
-
+                viewModel.deleteNote(list)
                 Snackbar.make(binding.constraintLay,"Данные были удалены...", Snackbar.LENGTH_LONG).setAction("toast"){
                     Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_SHORT).show()
                 }.show()
