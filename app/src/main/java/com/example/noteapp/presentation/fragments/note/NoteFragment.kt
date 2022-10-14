@@ -34,6 +34,12 @@ class NoteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        note = arguments?.getSerializable("note") as Note?
+
+        note?.let {
+            binding.edTitle.setText(it.title)
+            binding.EdText.setText(it.text)
+        }
         binding.btnSave.setOnClickListener{
             save()
         }
@@ -47,7 +53,8 @@ class NoteFragment : Fragment() {
         if (note == null) {
             note = Note(0,title,text)
         }else {
-            note?.title = text
+            note?.text = text
+            note?.title = title
         }
         bundle.putSerializable("note", note)
         parentFragmentManager.setFragmentResult("note", bundle)

@@ -7,37 +7,10 @@ import com.example.noteapp.databinding.ItemNoteRvBinding
 import com.example.noteapp.domain.model.Note
 
 
-class NoteAdapter(private val onClick:(position:Int)->Unit) :
+class NoteAdapter(private val onClick:(position:Int)->Unit,private var onItemLongClick:(Int)->Unit) :
     RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
 
     private var list = arrayListOf<Note>()
-
-    var onItemLongClick:((Int)->Unit)?=null
-
-
-    inner class ViewHolder(private var binding: ItemNoteRvBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-
-        init {
-            itemView.setOnLongClickListener {
-                onItemLongClick?.invoke(position)
-                true
-            }
-        }
-
-        fun bind(note: Note) {
-            with(binding){
-                textNote.text = note.text
-                noteTitle.text = note.title
-            }
-
-            itemView.setOnClickListener {
-                onClick(position)
-            }
-
-        }
-
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -95,8 +68,29 @@ class NoteAdapter(private val onClick:(position:Int)->Unit) :
         notifyItemChanged(position)
     }
 
+    inner class ViewHolder(private var binding: ItemNoteRvBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
+        init {
+            itemView.setOnLongClickListener {
+                onItemLongClick?.invoke(position)
+                true
+            }
+        }
 
+        fun bind(note: Note) {
+            with(binding){
+                textNote.text = note.text
+                noteTitle.text = note.title
+            }
+
+            itemView.setOnClickListener {
+                onClick(position)
+            }
+
+        }
+
+    }
 }
 
 

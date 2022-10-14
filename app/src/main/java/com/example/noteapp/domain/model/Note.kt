@@ -10,7 +10,7 @@ data class Note (
     @PrimaryKey(autoGenerate = true)
     val id: Int = Default_ID,
     var title: String,
-    val text: String
+    var text: String
         ):Serializable{
     constructor():this(0,"","")
     companion object{

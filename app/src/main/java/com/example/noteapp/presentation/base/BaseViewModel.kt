@@ -10,6 +10,8 @@ import kotlinx.coroutines.launch
 
 abstract class BaseViewModel:ViewModel() {
 
+    fun <T> uiStateFlow() = MutableStateFlow<UIState<T>>(UIState.Loading())
+
     protected fun <T> Flow<Resource<T>>.collectFlow(_state:MutableStateFlow<UIState<T>>){
             viewModelScope.launch {
                 this@collectFlow.collect{

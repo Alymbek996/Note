@@ -24,16 +24,19 @@ class MainViewModel @Inject constructor(
     private val deleteNoteUseCase: DeleteNoteUseCase
 ):BaseViewModel() {
 
-    private val _getAllNoteState = MutableStateFlow<UIState<List<Note>>>(UIState.Loading())
+    private val _getAllNoteState = uiStateFlow<List<Note>>()
     val getNoteAllState = _getAllNoteState.asStateFlow()
 
-    private val _createNoteState = MutableStateFlow<UIState<Unit>>(UIState.Loading())
+    private val _getNoteState = uiStateFlow<Note>()
+    val getNoteState = _getNoteState.asStateFlow()
+
+    private val _createNoteState = uiStateFlow<Unit>()
     val createNoteState = _createNoteState.asStateFlow()
 
-    private val _editNoteState = MutableStateFlow<UIState<Unit>>(UIState.Loading())
+    private val _editNoteState = uiStateFlow<Unit>()
     val editNoteState = _editNoteState.asStateFlow()
 
-    private val _deleteNoteState = MutableStateFlow<UIState<Unit>>(UIState.Loading())
+    private val _deleteNoteState = uiStateFlow<Unit>()
     val deleteNoteState = _deleteNoteState.asStateFlow()
 
       fun getAllNotes(){
