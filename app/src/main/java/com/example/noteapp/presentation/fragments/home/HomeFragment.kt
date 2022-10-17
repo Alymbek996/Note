@@ -62,7 +62,7 @@ class HomeFragment : BaseFragment() {
             val position:Int? = null
             if (ischanged){
                 position?.let {
-                    noteListAdapter.currentList.add(it,note)
+                    viewModel.editNote(note)
                 }
             }
             viewModel.createNote(Note(title = note.title, text = note.text))
